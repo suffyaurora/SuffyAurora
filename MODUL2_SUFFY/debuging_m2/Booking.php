@@ -56,7 +56,7 @@
 <form action ="MyBooking.php" method="POST">
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Name</label>
-        <input type="email" class="form-control"  value="Aurora_1202204316" id ="Nama" name="Nama">
+        <input type="email" class="form-control"  value="Aurora_1202204316" id ="Nama" readonly name="Nama">
     </div>
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Book Date</label>
