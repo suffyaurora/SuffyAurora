@@ -55,7 +55,7 @@
       <tbody>
         <tr class="table-secondary">
           <th scope="row">1</th>
-          <td><?php echo $BookingNumber ?></td>
+          <td><?php rand()?></td>
           <td><?php echo $name ?></td>
           <td><?php echo $checkin?></td>
           <td><?php echo $checkout?></td>
