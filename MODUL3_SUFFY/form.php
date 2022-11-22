@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav  gap-2">
                     <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-                    <a class="nav-link" href="booking.php">MyCar</a>
+                    <a class="nav-link" href="Myfile.php">MyCar</a>
                 </div>
             </div>
         </div>
@@ -35,7 +35,7 @@
 <div class="container">
     <b><br><h2 style="text-align:left">Tambah Mobil</h2></b>
     <p class="fw-light" style="text-align:left">Tambah Mobil baru anda ke list show room</p>
-<form action ="configur/insert.php" method="POST">
+<form action ="../configur/insert.php" method="POST">
     <div class="mb-3">
         <b><label for="exampleFormControlInput1" class="form-label">Nama Mobil</label></b>
         <input type="text" class="form-control"  value=""  id ="Nama" name="namaMobil">
@@ -59,7 +59,7 @@
 
     <div class="mb-3">
         <b><label for="exampleFormControlInput1" class="form-label">Foto</label></b>
-        <input type="file" class="form-control"  value="" id ="start time" name="foto">
+        <input type="file" class="form-control"  value="" id ="start time" name="filefoto">
     </div>
 
     <div class="mb-3">
