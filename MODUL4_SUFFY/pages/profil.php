@@ -44,53 +44,47 @@ $connect = mysqli_connect("localhost","root","","modul3");
             <div class="d-flex justify-content-start">
                 <div class="row mt-1">
         <!-- email -->
-        <div class="row g-2 align-items-center">
-        <div class="col-auto">
-            <label for="inputPassword6" class="col-form-label">Email :</label>
-        </div>
-        <div class="col-auto">
-            <input type="email" id="inputEmail" class="form-control"  aria-describedby="passwordHelpInline" placeholder="">
+        <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Email : </label>
+            <div class="col-sm-10">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+            </div>
         </div>
         <!-- nama -->
-        <div class="row g-2 align-items-center">
-        <div class="col-auto">
-            <label for="inputNama" class="col-form-label">Nama :</label>
-        </div>
-        <div class="col-auto">
-            <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" placeholder="">
+        <div class="form-group row g-2">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Nama :</label>
+            <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputPassword" placeholder="Nama">
+            </div>
         </div>
         <!-- noHp -->
-        <div class="row g-2 align-items-center">
-        <div class="col-auto">
-            <label for="inputPassword6" class="col-form-label">Nomor Handphone :</label>
+        <div class="form-group row g-2">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Nomor Handphone  :</label>
+            <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputPassword" placeholder="No Handphone">
+            <br></div>
         </div>
-        <div class="col-auto">
-            <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" placeholder="">
-        </div>
-        <p>------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+        <hr>
         <!-- password -->
-        <div class="row g-1 align-items-center">
-        <div class="col-auto">
-            <label for="inputPassword6" class="col-form-label">Kata Sandi :</label>
-        </div>
-        <div class="col-auto">
-            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" placeholder="Kata Sandi">
+        <div class="form-group row g-2">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Kata Sandi :</label>
+            <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            </div>
         </div>
         <!-- konfirmasi password -->
-        <div class="row g-2 align-items-center">
-        <div class="col-auto">
-            <label for="inputPassword6" class="col-form-label"> Konfirmasi Kata Sandi :</label>
-        </div>
-        <div class="col-auto">
-            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" placeholder="Konfirmasi Kata Sandi">
+        <div class="form-group row g-2">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Konfirmasi Kata Sandi :</label>
+            <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            </div>
         </div>
         <!-- warna navbar -->
-        <div class="row g-2 align-items-center">
-        <div class="col-auto">
-            <label for="inputPassword6" class="col-form-label">Warna Navbar :</label>
-        </div>
-        <div class="col-auto">
-            <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" placeholder="Blue">
+        <div class="form-group row g-2">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Warba Navbar :</label>
+            <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputPassword" placeholder="Blue">
+            </div>
         </div>
 
   </div>

@@ -26,10 +26,25 @@ $connect = mysqli_connect("localhost","root","","modul3");
                         <div class="d-flex justify-content-start ">
                         <a type="submit" href="login.php" class="btn btn-primary" nama="BookNow">Mycar</a>
                         </div>
-                        <div class="d-flex justify-content-start ">
+                        <!-- <div class="d-flex justify-content-start ">
                         <a type="submit" href="form.php" class="btn btn-primary" nama="BookNow">Add</a>
-                        </div>
+                        </div> -->
                     </form>
+                    <ul class="nav navbar-nav navbar-right">
+            <li><a href="form.php" class="btn btn-light btn-outline-primary" style="margin-right:50px">Add Car</a></li>
+            <div class="dropdown">
+                <button class="btn btn-light btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right:50px">
+                    Suffy
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="profil.php">Profil</a></li>
+                    <li><a class="dropdown-item" href="../configur/logout.php">Log Out</a></li>
+                </ul>
+                </div>
+            </ul>
+            </li>
+
+                    </div>
                 </div>
             </div>
         </div>

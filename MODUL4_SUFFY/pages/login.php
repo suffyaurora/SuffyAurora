@@ -1,46 +1,33 @@
 <?php
 
-$hostname ="localhost";
-$user ="root";
-$password ="";
-$db_name = "modul3";
+// $hostname ="localhost";
+// $user ="root";
+// $password ="";
+// $db_name = "modul3";
 
-$connect =mysqli_connect($hostname,$user,$password,$db_name) or die (mysqli_error($connect));
+// $connect =mysqli_connect($hostname,$user,$password,$db_name) or die (mysqli_error($connect));
 
-if(isset($_POST['daftar'])) {
-    $email = $_POST['email'];
-    $nama = $_POST['nama'];
-    $noHp = $_POST['no_Hp'];
-    $password1 = $_POST['password'];
-    $password2 = $_POST['password2'];
+include "../configur/connection.php";
 
-    // mengecek di dalam database
-    $cek_user = mysqli_query($connect,"SELECT * FROM user_suffy WHERE nama = '$nama'");
-    $cek_login = mysqli_num_rows($cek_user);
-
-    // mengecek ada di dalam database atau tidak
-    if ($cek_login > 0) {
-        echo "<script>
-            alert ('username telah terdaftar');
-            window.location = 'registrasi.php';
-            </script>";
-    } else {
-        if ($password1 != $password2) {
-            echo "<script>
-            alert ('kata sandi yang anda masukkan tidak sesuai');
-            window.location = 'registrasi.php';
-            </script>";
-        } else {
-            mysqli_query($connect, "INSERT INTO user_suffy VALUES('','$email','$nama','$noHp','$password1')");
-            echo "<script>
-            alert ('data berhasil disimpan');
-            window.location = '../index.php';
-            </script>";
+if(isset($_POST["login"])) {
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+// untuk menampilkan email yang sudah di daftar
+    $hasil = mysqli_query($connect, "SELECT * FROM user_suffy WHERE email = '$email'");
+    if(mysqli_num_rows($hasil) === 1){
+        $row = mysqli_fetch_assoc($hasil);
+        if($password == $row["password"]){
+            header("Location: home2.php");
+            exit;
         }
     }
+
+    $error = true;
 }
+
 ?>
 
+            
 <!doctype html>
 <html lang="en">
 <head >
@@ -57,7 +44,7 @@ if(isset($_POST['daftar'])) {
 <body>
 <section>
 <div class="container">
-<form action ="home2.php" method ="POST">
+<form action ="" method ="POST">
     <div class="row vh-50 align-items-center">
         <div class="col">
             <div class="d-flex justify-content-start">
@@ -69,18 +56,22 @@ if(isset($_POST['daftar'])) {
         <div class="col">
             <h1 style="text-align:left">Login</h1>    
         <form>
+            <!-- ketika masukkan foto/password yang salah -->
+            <?php if(isset($error)): ?>
+                <p style="color:red;">Email / Password Salah!</p>
+            <?php endif; ?>
             <!-- email -->
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
             </div>
             <!-- password -->
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Kata Sandi</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password">
             </div>
             
-            <button type="submit" class="btn btn-primary">Login</button><br>
+            <button type="submit" class="btn btn-primary" name="login">Login</button><br>
             <br><p class="fw-light" style="text-align:left"> Anda belum punya akun? <a href="registrasi.php">Daftar</a><p>
             </form>
     </div>

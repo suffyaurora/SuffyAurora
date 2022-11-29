@@ -10,13 +10,13 @@ if(isset($_POST['daftar'])) {
     $password2 = $_POST['password2'];
 
     // mengecek di dalam database
-    $cek_user = mysqli_query($connect,"SELECT * FROM user_suffy WHERE nama = '$nama'");
+    $cek_user = mysqli_query($connect,"SELECT * FROM user_suffy WHERE email = '$email'");
     $cek_login = mysqli_num_rows($cek_user);
 
     // mengecek ada di dalam database atau tidak
     if ($cek_login > 0) {
         echo "<script>
-            alert ('username telah terdaftar');
+            alert ('email telah terdaftar');
             window.location = 'registrasi.php';
             </script>";
     } else {
@@ -26,10 +26,10 @@ if(isset($_POST['daftar'])) {
             window.location = 'registrasi.php';
             </script>";
         } else {
-            mysqli_query($connect, "INSERT INTO user_suffy VALUES('','$email','$nama','$noHp','$password1')");
+            mysqli_query($connect, "INSERT INTO user_suffy VALUES('','$nama','$email','$password1','$noHp')");
             echo "<script>
             alert ('data berhasil disimpan');
-            window.location = 'home2.php';
+            window.location = 'login.php';
             </script>";
         }
     }
@@ -74,6 +74,11 @@ if(isset($_POST['daftar'])) {
                 <label for="exampleInputEmail1" class="form-label">Nama</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="nama" name="nama">
             </div>
+            <!-- nomor hp -->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Nomor Handphone</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="nomorhp" name="no_hp">
+            </div>
             <!-- password -->
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Kata Sandi</label>
@@ -84,11 +89,7 @@ if(isset($_POST['daftar'])) {
                 <label for="exampleInputPassword2" class="form-label">Konfirmasi Kata Sandi</label>
                 <input type="password" class="form-control" id="exampleInputPassword2" name="password2">
             </div>
-            <!-- nomor hp -->
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Nomor Handphone</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="nomorhp" name="no_hp">
-            </div>
+
             
             
             <button type="submit" class="btn btn-primary" value = "daftar" a href="login.php" name= "daftar">Daftar</button><br>
