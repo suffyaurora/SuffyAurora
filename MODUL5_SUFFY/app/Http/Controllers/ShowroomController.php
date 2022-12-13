@@ -27,7 +27,7 @@ class ShowroomController extends Controller
      */
     public function create()
     {
-        //
+        return view('showroom.form');
     }
 
     /**
@@ -38,7 +38,19 @@ class ShowroomController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $imageFoto=time().'.'.$request -> filefoto ->extension();
+        $request -> filefoto -> move(public_path('image'),$imageFoto);
+        Showroom::create([
+            'name' =>$request -> namaMobil,
+            'owner'=>$request -> namaPemilik,
+            'brand'=>$request -> merk,
+            'purchase_date' =>$request -> tanggalBeli,
+            'description' => $request -> deskripsi,
+            'image' => $imageFoto,
+            'status' => $request -> statuspembayaran
+
+        ]);
+        return redirect('showroom');
     }
 
     /**
@@ -49,7 +61,7 @@ class ShowroomController extends Controller
      */
     public function show(Showroom $showroom)
     {
-        //
+        
     }
 
     /**

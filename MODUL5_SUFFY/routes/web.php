@@ -14,8 +14,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/registrasi', function () {
+    return view('showroom/registrasi');
+});
+Route::get('/login', function () {
+    return view('showroom/login');
+});
+Route::get('/form', function () {
+    return view('showroom/form');
+});
+Route::get('/showroom', function () {
+    return view('showroom');
+});
 Route::resource('showroom', ShowroomController::class);
+
+Route::get('/showroom', 'App\Http\Controllers\ShowroomController@create');
+Route::post('/showroom','App\Http\Controllers\ShowroomController@store');
